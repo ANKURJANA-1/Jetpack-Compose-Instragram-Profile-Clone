@@ -1,31 +1,35 @@
 package com.example.instragramclone
 
-import androidx.compose.foundation.Image
+import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material.Icon
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material.icons.filled.Notifications
-import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.foundation.Image as Image
 
 @Composable
 fun ProfileScreen() {
-    Column(modifier = Modifier.fillMaxSize()) {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(color = Color.White)
+    ) {
         TopBar()
         ProfileBar()
         IntroBar()
@@ -106,7 +110,7 @@ fun IntroBar() {
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(start = 15.dp,end = 15.dp),
+            .padding(start = 15.dp, end = 15.dp),
     ) {
         Text(
             text = "Developer...................",
@@ -133,13 +137,77 @@ fun IntroBar() {
                 color = Color.Magenta,
             )
         )
-
         Text(
             text = "Followed By.................",
             style = TextStyle(
                 color = Color.Black,
             )
         )
+    }
+}
+
+@Composable
+fun ButtonBar() {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(top = 15.dp),
+        horizontalArrangement = Arrangement.SpaceEvenly,
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        IconButton(
+            onClick = { /*TODO*/ },
+            modifier = Modifier
+                .clip(CircleShape)
+                .width(120.dp)
+                .height(30.dp)
+                .border(1.dp, color = Color.Black),
+        ) {
+            Image(
+                painter = painterResource(id = R.drawable.ic_launcher_background),
+                contentDescription = "",
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .background(color = Color.Black, shape = CircleShape)
+            )
+        }
+
+        IconButton(
+            onClick = { /*TODO*/ },
+            modifier = Modifier
+                .clip(CircleShape)
+                .width(120.dp)
+                .height(30.dp)
+                .border(1.dp, color = Color.Black),
+        ) {
+            Image(
+                painter = painterResource(id = R.drawable.ic_launcher_background),
+                contentDescription = "",
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .background(color = Color.Black, shape = CircleShape)
+            )
+        }
+
+        IconButton(
+            onClick = { /*TODO*/ },
+            modifier = Modifier
+                .clip(CircleShape)
+                .width(120.dp)
+                .height(30.dp)
+                .border(1.dp, color = Color.Black),
+
+        ) {
+            Image(
+                painter = painterResource(id = R.drawable.ic_launcher_background),
+                contentDescription = "",
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .background(color = Color.Black, shape = CircleShape)
+            )
+        }
+
+
     }
 }
 
@@ -150,5 +218,6 @@ fun DefaultProfileScreen() {
         TopBar()
         ProfileBar()
         IntroBar()
+        ButtonBar()
     }
 }
