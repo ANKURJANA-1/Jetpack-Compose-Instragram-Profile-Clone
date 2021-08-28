@@ -9,6 +9,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.instragramclone.ui.theme.InstragramCloneTheme
+import com.example.instragramclone.ui.theme.MeditationDashboard
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,7 +18,7 @@ class MainActivity : ComponentActivity() {
             InstragramCloneTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
-                    ProfileScreen()
+                    MeditationDashboard()
                 }
             }
         }
@@ -33,6 +34,6 @@ fun Greeting(name: String) {
 @Composable
 fun DefaultPreview() {
     InstragramCloneTheme {
-        ProfileScreen()
+        MeditationDashboard()
     }
 }

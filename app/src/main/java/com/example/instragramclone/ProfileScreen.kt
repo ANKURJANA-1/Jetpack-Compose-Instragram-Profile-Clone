@@ -197,7 +197,7 @@ fun ButtonBar() {
                 .height(30.dp)
                 .border(1.dp, color = Color.Black),
 
-        ) {
+            ) {
             Image(
                 painter = painterResource(id = R.drawable.ic_launcher_background),
                 contentDescription = "",
